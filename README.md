@@ -1,15 +1,35 @@
 
-Para correr prueba especifica
+# Selenium JavaScript Test Template
+
+This repository provides a template for setting up and running Selenium WebDriver tests using JavaScript and Mocha.
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/juanpivl/SeleniumJsTestTemplate.git
+
+
+Installation
+1.Navigate to the project directory:
+cd SeleniumJsTestTemplate
+
+2.Install dependencies:
+npm i
+
+Note: you must have chromedriver as an environment variable.
+
+Running a specific test
 npx mocha test/modules/module1/testFile1.js
 
-Para correr una Todas las pruebas de un modulo
+Run all the tests of a module
 npx mocha test/modules/module1/*.js
 
-Correr todas las pruebas de todos los modulos
+Run all the tests 
 npm run test:all     
 
 Structure
-
 ![structure](https://github.com/juanpivl/SeleniumJsTestTemplate/assets/62524570/ab8a5ad9-6d94-42ab-9470-e9de2d6e5e61)
 
 Example interface
