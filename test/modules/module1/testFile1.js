@@ -19,7 +19,7 @@ describe('Modulo 1, archivo 1,prueba1', function () {
     });
 
     it('Insertar texto en el campo de búsqueda de Google', async function () {
-        const input = await driver.findElement(By.name(input));
+        const input = await driver.findElement(By.name('q'));
         await input.sendKeys('Ejemplo de búsqueda', Key.RETURN); 
 
         await driver.wait(until.titleIs('Ejemplo de búsqueda - Buscar con Google'), 5000);

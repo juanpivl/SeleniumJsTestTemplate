@@ -1,26 +1,26 @@
+
 const assert = require('assert');
 const { Builder, By, Key, until } = require('selenium-webdriver');
-const [createDriver,closeDriver] = require('../../shared/config'); 
+const [createDriver,closeDriver,baseUrl] = require('../../shared/config'); 
 
-describe('Modulo 2, archivo 2,prueba1', function () {
+
+describe('Modulo 2, archivo 1,prueba1', function () {
     let  driver;
-    this.timeout(5000); // Aumentar el tiempo de espera a 5 segundos
+    this.timeout(5000); 
 
-    // Navegación al principio del describe
     before(async function () {
         driver = createDriver();
-        await driver.get('https://www.google.com');
-        
+        await driver.get(baseUrl);
     });
 
     it('Verificar título de Google', async function () {
         const title = await driver.getTitle();
-        assert.strictEqual(title, 'Google'); // Verificar que el título es 'Google'
+        assert.strictEqual(title, 'Google'); 
     });
 
     it('Insertar texto en el campo de búsqueda de Google', async function () {
-        const input = await driver.findElement(By.name('q')); // Encuentra el elemento de entrada por su atributo name
-        await input.sendKeys('Ejemplo de búsqueda', Key.RETURN); // Inserta texto y presiona Enter
+        const input = await driver.findElement(By.name('q'));
+        await input.sendKeys('Ejemplo de búsqueda', Key.RETURN); 
 
         await driver.wait(until.titleIs('Ejemplo de búsqueda - Buscar con Google'), 5000);
     });
@@ -30,24 +30,23 @@ describe('Modulo 2, archivo 2,prueba1', function () {
     });
 });
 
-describe('Modulo 2, archivo 2,prueba2', function () {
+describe('Modulo 2, archivo 1,prueba2', function () {
     let driver;
-    this.timeout(5000); // Aumentar el tiempo de espera a 5 segundos
+    this.timeout(5000); 
 
-    // Navegación al principio del describe
     before(async function () {
         driver = createDriver();
-        await driver.get('https://www.google.com');
+        await driver.get(baseUrl);
     });
 
     it('Verificar título de Google', async function () {
         const title = await driver.getTitle();
-        assert.strictEqual(title, 'Google'); // Verificar que el título es 'Google'
+        assert.strictEqual(title, 'Google'); 
     });
 
     it('Insertar texto en el campo de búsqueda de Google', async function () {
-        const input = await driver.findElement(By.name('q')); // Encuentra el elemento de entrada por su atributo name
-        await input.sendKeys('Ejemplo de búsqueda', Key.RETURN); // Inserta texto y presiona Enter
+        const input = await driver.findElement(By.name('q')); 
+        await input.sendKeys('Ejemplo de búsqueda', Key.RETURN); 
 
         await driver.wait(until.titleIs('Ejemplo de búsqueda - Buscar con Google'), 5000);
     });
